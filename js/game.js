@@ -16,12 +16,12 @@ const config = {
       debug: true,
     },
   },
-    // This Is The Current Background Colour
+  // This Is The Current Background Colour
   backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
     //I Made This Fit The Centre Of The Page
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    autoCenter: Phaser.Scale.CENTER_BOTH,
   },
 };
 const game = new Phaser.Game(config);
