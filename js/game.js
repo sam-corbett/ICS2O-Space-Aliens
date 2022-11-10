@@ -10,7 +10,19 @@ const config = {
   type: Phaser.AUTO,
   width: 1920,
   height: 1080,
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug: true,
+    },
+  },
+    // This Is The Current Background Colour
   backgroundColor: 0x5f6e7a,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    //I Made This Fit The Centre Of The Page
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
 };
 const game = new Phaser.Game(config);
 console.log(game);
