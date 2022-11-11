@@ -30,4 +30,4 @@ const config = {
   },
 };
 const game = new Phaser.Game(config);
-game.scene.add{'splashScene', splashScene}
+game.scene.add;{'splashScene', splashScene}
