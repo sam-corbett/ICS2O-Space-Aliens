@@ -28,7 +28,7 @@ const config = {
     //I Made This Fit The Centre Of The Page
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-}
-const game = new Phaser.Game(config)
-game.scene.add ("splashScene", splashScene)
-game.scene.start ("splashScene")
+};
+const game = new Phaser.Game(config);
+game.scene.add("splashScene", splashScene);
+game.scene.start("splashScene");
