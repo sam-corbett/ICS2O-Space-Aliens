@@ -15,7 +15,7 @@ class TitleScene extends Phaser.Scene {
    */
 
   constructor() {
-    super({ key: "titleScene" });
+    super({ key: "titleScene" })
   }
   /**
    * Can be defined on your own scenes.
@@ -23,14 +23,14 @@ class TitleScene extends Phaser.Scene {
    * before preload() & create().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff");
+    this.cameras.main.setBackgroundColor("#ffffff")
   }
   /**
    * Can be defined on your own scenes.
    * Use it to load scenes.
    */
   preload() {
-    console.log("Title Scene");
+    console.log("Title Scene")
   }
 
   /**
@@ -52,4 +52,4 @@ class TitleScene extends Phaser.Scene {
   }
 }
 
-export default TitleScene;
+export default TitleScene
