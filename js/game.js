@@ -6,12 +6,12 @@
 // Created on: Nov 2022
 // This is the Phaser3 game configuration file!
 
-import SplashScene from "./splashScene.js";
-import TitleScene from "./titleScene.js";
+import SplashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
 
 //The game scene
-const splashScene = new SplashScene();
-const titleScene = new TitleScene();
+const splashScene = new SplashScene()
+const titleScene = new TitleScene()
 
 const config = {
   type: Phaser.AUTO,
@@ -31,11 +31,11 @@ const config = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
 };
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(config)
 // load scenes
 // NOTE: remember any "key" is global and CAN NOT be reused
-game.scene.add("splashScene", splashScene);
-game.scene.add("titleScene", titleScene);
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
 
 // start title
-game.scene.start("splashScene");
+game.scene.start("splashScene")
