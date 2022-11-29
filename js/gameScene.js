@@ -24,14 +24,14 @@ class GameScene extends Phaser.Scene {
    * before preload() & create().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff");
+    this.cameras.main.setBackgroundColor("0x5f6e7a");
   }
   /**
    * Can be defined on your own scenes.
    * Use it to load scenes.
    */
   preload() {
-    console.log("Splash Scene");
+    console.log("Game Scene");
   }
 
   /**
@@ -51,5 +51,5 @@ class GameScene extends Phaser.Scene {
   update(time, delta) {
     //pass
   }
-
-
+}
+export default GameScene;

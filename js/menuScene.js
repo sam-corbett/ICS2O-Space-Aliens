@@ -6,9 +6,6 @@
 // Created on: Nov 2022
 // This is the Menu Scene!
 
-/**
- * Class Is In Menu Scene.
- */
 class MenuScene extends Phaser.Scene {
   /**
    * This Method Is The Constructor.
@@ -34,8 +31,8 @@ class MenuScene extends Phaser.Scene {
    */
   preload() {
     console.log("Menu Scene");
-    this.load.image("MenuSceneBackground", "./assets_screen_image2.jpg")
-    this.load.image("startButton", "./assets/start.png")
+    this.load.image("menuSceneBackground", "assets/aliens_screen_image2.jpg");
+    this.load.image("startButton", "assets/start.png");
   }
 
   /**
@@ -44,16 +41,14 @@ class MenuScene extends Phaser.Scene {
    */
   create(data) {
     this.menuSceneBackgroundImage = this.add
-      .sprite(1000, 500, "titleSceneBackground")
+      .sprite(1000, 500, "menuSceneBackground")
       .setScale(2.75);
     this.menuSceneBackgroundImage.x = 1920 / 2;
     this.menuSceneBackgroundImage.y = 1080 / 2;
 
-    this.startButton = this.add
-      .sprite(1920 / 2, 1080 / 2 + 100, "startButton")
-    this.startButton = this.add
-      .setInteractive({ useHandCursor: true})
-    this.startButton.on("pointerdown", () => this.clickButton())
+    this.startButton = this.add.sprite(1920 / 2, 1080 / 2 + 100, "startButton");
+    this.startButton.setInteractive({ useHandCursor: true });
+    this.startButton.on("pointerdown", () => this.clickButton());
   }
 
   /**
@@ -62,11 +57,11 @@ class MenuScene extends Phaser.Scene {
    * @param {number} time - The Current Time
    * @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {
-    //pass
-  } 
+  update(time, delta) {}
+
   clickButton() {
-    this.scene.start("gameScene")
+    this.scene.start("gameScene");
   }
 }
+
 export default MenuScene;
