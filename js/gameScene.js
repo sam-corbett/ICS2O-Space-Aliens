@@ -37,11 +37,17 @@ class GameScene extends Phaser.Scene {
   preload() {
     console.log("Game Scene");
 
+    // images
     this.load.image("starBackground", "./assets/starBackground.png");
     this.load.image("spaceShip", "./assets/spaceShip.png");
     this.load.image("missile", "./assets/missile.png");
+
+    // sound
+    this.load.audio("laser", "./assets/laser1.wav")
   }
 
+
+  
   /**
    * Can be defined on your own scenes.
    * Use it to make your game objects.
@@ -88,12 +94,20 @@ class GameScene extends Phaser.Scene {
           "missile"
         );
         this.missleGroup.add(aNewMissile);
+        this.sound.play("laser")
       }
     }
 
     if (keySpaceObj.isUp === true) {
       this.fireMissile = false;
     }
+
+    this.missleGroup.children.each(function (item) {
+      item.y = item.y - 15
+      if (item.y < 0) {
+        item.destroy()
+      }
+    })
   }
 }
 export default GameScene;
