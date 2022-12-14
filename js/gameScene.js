@@ -69,13 +69,17 @@ class GameScene extends Phaser.Scene {
     this.alienGroup = this.add.group();
     this.createAlien();
 
-    this.physics.add.collider(this.missleGroup, this.alienGroup, function(missileCollide, alienCollide) {
-      alienCollide.destroy()
-      missileCollide.destroy()
-      this.sound.play("explosion")
-      this.createAlien();
-      this.createAlien();
-    }.bind(this))
+    this.physics.add.collider(
+      this.missleGroup,
+      this.alienGroup,
+      function (missileCollide, alienCollide) {
+        alienCollide.destroy();
+        missileCollide.destroy();
+        this.sound.play("explosion");
+        this.createAlien();
+        this.createAlien();
+      }.bind(this)
+    );
   }
   /**
    * Should be overridden by your scenes.
@@ -119,7 +123,7 @@ class GameScene extends Phaser.Scene {
       this.fireMissile = false;
     }
 
-    this.missleGroup.children.each(function(item) {
+    this.missleGroup.children.each(function (item) {
       item.y = item.y - 15;
       if (item.y < 0) {
         item.destroy();
