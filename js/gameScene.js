@@ -10,15 +10,14 @@
  * Class Is In Game Scene.
  */
 class GameScene extends Phaser.Scene {
-
   createAlien() {
-    const alienXLocation = Math.floor(Math.random() * 1920) + 1
-    let alienXVelocity = Math.floor(Math.random() * 50) + 1
-    alienXVelocity *= Math.round(Math.random()) ? 1 : -1
+    const alienXLocation = Math.floor(Math.random() * 1920) + 1;
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1;
+    alienXVelocity *= Math.round(Math.random()) ? 1 : -1;
     const anAlien = this.physics.add.sprite(alienXLocation, 100, "alien");
-    anAlien.body.velocity.y = 100
-    anAlien.body.velocity.x = alienXVelocity
-    this.alienGroup.add(anAlien)
+    anAlien.body.velocity.y = 100;
+    anAlien.body.velocity.x = alienXVelocity;
+    this.alienGroup.add(anAlien);
   }
 
   constructor() {
@@ -67,7 +66,7 @@ class GameScene extends Phaser.Scene {
     this.missleGroup = this.physics.add.group();
 
     this.alienGroup = this.add.group();
-    this.createAlien()
+    this.createAlien();
   }
   /**
    * Should be overridden by your scenes.
@@ -111,7 +110,7 @@ class GameScene extends Phaser.Scene {
       this.fireMissile = false;
     }
 
-    this.missleGroup.children.each(function(item) {
+    this.missleGroup.children.each(function (item) {
       item.y = item.y - 15;
       if (item.y < 0) {
         item.destroy();
